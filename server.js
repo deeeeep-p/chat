@@ -43,9 +43,7 @@ io.on("connection", (socket) => {
 
 const start = async () => {
   try {
-    await connectDB(
-      "mongodb+srv://deeppatel223204:1234@chat.aaqgi9q.mongodb.net/?retryWrites=true&w=majority"
-    );
+    await connectDB(process.env.MONG_URI);
     http.listen(5000, console.log(`listening to port 5k`));
   } catch (error) {
     console.log(error);
